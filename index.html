@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>omar-gaafow | Portfolio</title>
+  </head>
+  <body class="relative min-h-screen bg-white text-[#0b1c30] font-sans overflow-x-hidden antialiased selection:bg-[#fea619]/20 selection:text-[#0b1c30]">
+    
+    <!-- Dynamic Background Grid Overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#00236f03_1px,transparent_1px),linear-gradient(to_bottom,#00236f03_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0"></div>
+
+    <!-- Header / Sticky Navigation Bar -->
+    <header id="app-header" class="fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 flex items-center bg-white border-b border-slate-100 shadow-sm">
+      <div class="w-full max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        <!-- Logo -->
+        <a id="brand-logo" href="#hero" class="font-display text-2xl font-extrabold tracking-tight text-[#00236f] hover:opacity-90 transition-opacity">
+          omar-gaafow
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#hero" class="nav-link font-sans text-[15px] font-semibold tracking-wide transition-colors duration-200 relative py-1.5 text-[#00236f] active-nav" data-section="hero">Hero</a>
+          <a href="#skills" class="nav-link font-sans text-[15px] font-semibold tracking-wide transition-colors duration-200 relative py-1.5 text-slate-600 hover:text-[#00236f]" data-section="skills">Skills</a>
+          <a href="#projects" class="nav-link font-sans text-[15px] font-semibold tracking-wide transition-colors duration-200 relative py-1.5 text-slate-600 hover:text-[#00236f]" data-section="projects">Projects</a>
+          <a href="#contact" class="nav-link font-sans text-[15px] font-semibold tracking-wide transition-colors duration-200 relative py-1.5 text-slate-600 hover:text-[#00236f]" data-section="contact">Contact</a>
+          
+          <!-- Resume CTA -->
+          <button id="resume-download-btn" class="ml-4 bg-[#00236f] hover:bg-[#00174e] text-white font-sans font-semibold text-[14px] px-6 py-2.5 rounded-full transition-all duration-300 flex items-center gap-2 hover:scale-[1.03] active:scale-[0.97]">
+            <svg class="w-4 h-4 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <line x1="10" y1="9" x2="8" y2="9"></line>
+            </svg>
+            Resume
+            <svg class="w-3.5 h-3.5 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </button>
+        </nav>
+
+        <!-- Hamburger Icon for Mobile Menu -->
+        <button id="mobile-menu-toggle" class="p-2 text-[#0b1c30] hover:text-[#fea619] transition-colors md:hidden focus:outline-none" aria-label="Toggle navigation menu">
+          <svg id="hamburger-icon" class="w-6 h-6 block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 top-0 z-40 bg-white flex flex-col pt-28 px-8 pb-10 border-b border-slate-200 shadow-xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none">
+      <div class="flex flex-col h-full justify-between">
+        <nav class="flex flex-col gap-6 text-center">
+          <a href="#hero" class="mobile-nav-link text-2xl font-display font-semibold transition-colors py-2 text-[#00236f] bg-slate-50 rounded-xl" data-section="hero">Hero</a>
+          <a href="#skills" class="mobile-nav-link text-2xl font-display font-semibold transition-colors py-2 text-slate-600 hover:text-[#00236f]" data-section="skills">Skills</a>
+          <a href="#projects" class="mobile-nav-link text-2xl font-display font-semibold transition-colors py-2 text-slate-600 hover:text-[#00236f]" data-section="projects">Projects</a>
+          <a href="#contact" class="mobile-nav-link text-2xl font-display font-semibold transition-colors py-2 text-slate-600 hover:text-[#00236f]" data-section="contact">Contact</a>
+        </nav>
+        
+        <div class="flex flex-col items-center gap-6">
+          <div class="w-full h-[1px] bg-slate-100"></div>
+          <button id="mobile-resume-btn" class="w-full bg-[#00236f] hover:bg-[#00174e] text-white font-sans font-bold py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <line x1="10" y1="9" x2="8" y2="9"></line>
+            </svg>
+            Download Resume
+          </button>
+          <p class="text-xs text-slate-500 text-center font-mono">
+            CURRENT TIME: 2026-06-21 GMT
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Main Area -->
+    <main class="relative z-10">
+
+      <!-- HERO SECTION -->
+      <section id="hero" class="relative min-h-[90vh] pt-32 pb-24 md:pt-40 md:pb-32 flex items-center overflow-hidden bg-white">
+        <!-- Ambient radial glow background files -->
+        <div class="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-[#fea619]/5 rounded-full blur-[140px] pointer-events-none select-none"></div>
+        <div class="absolute bottom-1/4 right-[10%] w-[35vw] h-[35vw] bg-[#00236f]/3 rounded-full blur-[150px] pointer-events-none select-none"></div>
+
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+          
+          <!-- Column 1: Copywriting Text details -->
+          <div class="col-span-1 md:col-span-7 flex flex-col items-start text-left">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f8f9ff] border border-slate-200 text-[#00236f] font-mono text-[13px] font-semibold mb-6 tracking-wider">
+              <svg class="w-4 h-4 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              <span>AVAILABLE FOR SENIOR ROLES</span>
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight text-[#00236f]">
+              Hi, I'm <br />
+              <span class="text-[#00236f]">omar-gaafow</span>
+            </h1>
+
+            <p class="font-sans text-[18px] text-slate-600 max-w-xl mb-10 leading-relaxed">
+              Full Stack Developer &amp; UI Enthusiast crafting clean, user-centric digital experiences with technical precision and creative flare.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <a href="#projects" class="bg-[#fea619] hover:bg-[#e09000] text-[#00236f] font-sans font-bold text-[15px] px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#fea619]/20">
+                View Projects
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="border-2 border-[#00236f] hover:bg-slate-50 text-[#00236f] font-sans font-bold text-[15px] px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center hover:scale-[1.02] active:scale-[0.98]">
+                Get in Touch
+              </a>
+            </div>
+
+            <div class="mt-16 grid grid-cols-3 gap-6 pt-8 border-t border-slate-100 text-left w-full max-w-md">
+              <div>
+                <p class="font-display text-2xl font-bold text-[#00236f]">5+</p>
+                <p class="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">Years Exp</p>
+              </div>
+              <div>
+                <p class="font-display text-2xl font-bold text-[#00236f]">30+</p>
+                <p class="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">Delivered</p>
+              </div>
+              <div>
+                <p class="font-display text-2xl font-bold text-[#00236f]">99%</p>
+                <p class="font-sans text-xs text-slate-500 mt-1 uppercase tracking-wider">Satisfaction</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Media Portrait aspect -->
+          <div id="hero-image-container" class="col-span-1 md:col-span-5 order-1 md:order-2 flex justify-center">
+            <div class="relative w-72 sm:w-80 md:w-full max-w-md aspect-square rounded-[3rem] overflow-hidden border-[12px] border-slate-100/90 shadow-2xl z-10 bg-white">
+              <img id="developer-avatar-img" class="w-full h-full object-cover select-none transition-all duration-500 hover:scale-102"
+                src="/src/assets/images/developer_avatar_1782049751808.jpg"
+                alt="A professional portrait of omar-gaafow" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="py-24 md:py-32 bg-[#f8f9ff] relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-80 h-80 bg-[#fea619]/5 rounded-full blur-[100px] pointer-events-none select-none"></div>
+
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          <div class="text-center mb-16 md:mb-24">
+            <span class="text-[#fea619] font-mono text-xs font-semibold uppercase tracking-widest mb-3 block">SYSTEM ARCHITECTURES</span>
+            <h2 class="font-display text-4xl font-extrabold tracking-tight mb-4 text-[#00236f]">Core Expertise</h2>
+            <div class="w-12 h-1 bg-[#fea619] mx-auto rounded-full"></div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Skill Card 1: Frontend -->
+            <div class="group bg-white border border-slate-200/80 hover:border-[#fea619] p-8 rounded-2xl flex flex-col items-center text-center transition-all duration-300 relative shadow-sm hover:shadow-xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#fea619]/0 to-[#fea619]/[0.01] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <div class="w-16 h-16 bg-[#fea619]/10 text-[#00236f] group-hover:text-white group-hover:bg-[#fea619] border border-[#fea619]/20 group-hover:border-[#fea619] flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 transform group-hover:rotate-6">
+                <!-- Layout Icon represented as SVG -->
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl font-bold text-[#00236f] mb-3 tracking-wide">Frontend</h3>
+              <p class="font-sans text-sm text-slate-500 leading-relaxed mb-6 flex-grow">
+                Building responsive, highly interactive, and performant web interfaces with modern paradigms.
+              </p>
+              <div class="flex flex-wrap justify-center gap-1.5 mt-auto">
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">React</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">TypeScript</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">Tailwind CSS</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide font-medium">Motion</span>
+              </div>
+            </div>
+
+            <!-- Skill Card 2: Backend -->
+            <div class="group bg-white border border-slate-200/80 hover:border-[#fea619] p-8 rounded-2xl flex flex-col items-center text-center transition-all duration-300 relative shadow-sm hover:shadow-xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#fea619]/0 to-[#fea619]/[0.01] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <div class="w-16 h-16 bg-[#fea619]/10 text-[#00236f] group-hover:text-white group-hover:bg-[#fea619] border border-[#fea619]/20 group-hover:border-[#fea619] flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 transform group-hover:rotate-6">
+                <!-- Database Icon -->
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl font-bold text-[#00236f] mb-3 tracking-wide">Backend</h3>
+              <p class="font-sans text-sm text-slate-500 leading-relaxed mb-6 flex-grow">
+                Scaling robust server-side architectures, real-time message routing, and reliable APIs.
+              </p>
+              <div class="flex flex-wrap justify-center gap-1.5 mt-auto">
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">Node.js</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">Express</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">PostgreSQL</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">REST APIs</span>
+              </div>
+            </div>
+
+            <!-- Skill Card 3: Mobile -->
+            <div class="group bg-white border border-slate-200/80 hover:border-[#fea619] p-8 rounded-2xl flex flex-col items-center text-center transition-all duration-300 relative shadow-sm hover:shadow-xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#fea619]/0 to-[#fea619]/[0.01] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <div class="w-16 h-16 bg-[#fea619]/10 text-[#00236f] group-hover:text-white group-hover:bg-[#fea619] border border-[#fea619]/20 group-hover:border-[#fea619] flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 transform group-hover:rotate-6">
+                <!-- Smartphone Icon -->
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl font-bold text-[#00236f] mb-3 tracking-wide">Mobile</h3>
+              <p class="font-sans text-sm text-slate-500 leading-relaxed mb-6 flex-grow">
+                Developing seamless cross-platform native applications for fluid mobile interactions.
+              </p>
+              <div class="flex flex-wrap justify-center gap-1.5 mt-auto">
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">React Native</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">iOS / Android</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">Fastlane</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">Expo</span>
+              </div>
+            </div>
+
+            <!-- Skill Card 4: DevOps -->
+            <div class="group bg-white border border-slate-200/80 hover:border-[#fea619] p-8 rounded-2xl flex flex-col items-center text-center transition-all duration-300 relative shadow-sm hover:shadow-xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#fea619]/0 to-[#fea619]/[0.01] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <div class="w-16 h-16 bg-[#fea619]/10 text-[#00236f] group-hover:text-white group-hover:bg-[#fea619] border border-[#fea619]/20 group-hover:border-[#fea619] flex items-center justify-center rounded-2xl mb-6 transition-all duration-300 transform group-hover:rotate-6">
+                <!-- Cloud Icon SVG -->
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a6 6 0 0 0 0-12z"></path>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl font-bold text-[#00236f] mb-3 tracking-wide">DevOps</h3>
+              <p class="font-sans text-sm text-slate-500 leading-relaxed mb-6 flex-grow">
+                Streamlining automatic deployment pipelines, monitoring systems, and secure cloud infrastructure.
+              </p>
+              <div class="flex flex-wrap justify-center gap-1.5 mt-auto">
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">Docker</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">AWS</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">CI/CD</span>
+                <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0b1c30] rounded-full tracking-wide">Nginx</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="py-24 md:py-32 bg-white relative">
+        <div class="absolute left-0 bottom-1/4 w-[30%] h-[30%] bg-[#fea619]/3 rounded-full blur-[120px] pointer-events-none select-none"></div>
+
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+            <div class="text-left">
+              <span class="text-[#fea619] font-mono text-xs font-semibold uppercase tracking-widest mb-3 block">Recent Engineering Works</span>
+              <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#00236f]">Featured Projects</h2>
+              <p class="text-slate-500 mt-3 font-sans leading-relaxed max-w-lg">
+                A collection of architectural systems I've designed and engineered with maximum performance.
+              </p>
+            </div>
+            <button id="view-archives-btn" class="group flex items-center gap-2 text-[#00236f] font-sans font-semibold hover:text-[#fea619] transition-colors duration-200 text-sm">
+              View All Archives
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Project 1: FinStream -->
+            <div class="group bg-[#f8f9ff]/80 rounded-3xl overflow-hidden border border-slate-200/80 transition-all duration-300 flex flex-col h-full hover:border-[#fea619] hover:bg-white hover:shadow-xl hover:shadow-slate-100/60">
+              <div class="aspect-video overflow-hidden relative bg-slate-100">
+                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAstrrR8zCE5ZFNMe8J0AmPPapTtx6nCZnNdz-qXgmRid76bfyXqeGYhqC6SroIkEWB6WR6D7ddZK30a43vw2CIHUgprxuVxqLJDJK8c1KRd8ZUk_PaWNfIAeyIErUp-px1QcJLzhwxkpYDu-TOq_q6FIwTxwmrGJBVSyW3npqydEdhfzAs38fvIn1t6qn-kSm2JECxpmh9l1M65UoGdjXrQJ3DG_k4hDvcRanBU3S49q34bn5XNOPC3jAgfttL12BiylEkM1UCyMI" 
+                  alt="FinStream Dashboard preview" referrerPolicy="no-referrer" />
+                <div class="absolute inset-0 bg-[#00236f]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                  <span class="bg-[#00236f] border border-slate-700 px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-all">
+                    Explore Case Study
+                    <svg class="w-3 h-3 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="p-8 flex flex-col flex-grow text-left">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">React</span>
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">TypeScript</span>
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">Next.js</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-[#00236f] mb-3 group-hover:text-[#fea619] transition-colors">FinStream Dashboard</h3>
+                <p class="font-sans text-sm text-slate-500 leading-relaxed mb-8 flex-grow">
+                  Real-time financial monitoring system featuring high-density data visualizations, live charts, and automated report generators.
+                </p>
+                <div class="pt-6 border-t border-slate-100 mt-auto">
+                  <button class="view-case-study-btn inline-flex items-center gap-1 text-[#00236f] font-sans text-sm font-semibold hover:underline decoration-[#fea619]/50 decoration-2 underline-offset-4" data-project="finstream">
+                    View Case Study
+                    <svg class="w-3.5 h-3.5 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: LuxeCommerce -->
+            <div class="group bg-[#f8f9ff]/80 rounded-3xl overflow-hidden border border-slate-200/80 transition-all duration-300 flex flex-col h-full hover:border-[#fea619] hover:bg-white hover:shadow-xl hover:shadow-slate-100/60">
+              <div class="aspect-video overflow-hidden relative bg-slate-100">
+                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnzx6f-XLqXZRkcDwVqRcppM7LejElGWO3fmCDKY_E1ZL2DHYPy9TIEwPspYAjtV3R75ERtG0NE4291UNotb83nskBF-KTy_ldCFNHufo3ThGRM-6YNLxo2CLYC3ONDzS8crE56w-VhJtVjCo6ShJWVL_CQmJmI_cED72BUWA3kQCxA1tpC7Atp1iJHcaZWvehJoMq_Do5K7LooUsb6E_DI1TtFE_0jeLihd0PsCuKtNtvMMwbXRGJSwv8AKAhbFW5MBzMSR6f31w" 
+                  alt="LuxeCommerce App preview" referrerPolicy="no-referrer" />
+                <div class="absolute inset-0 bg-[#00236f]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                  <span class="bg-[#00236f] border border-slate-700 px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-all">
+                    Explore Case Study
+                    <svg class="w-3 h-3 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="p-8 flex flex-col flex-grow text-left">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">React Native</span>
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">Firebase</span>
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">Redux</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-[#00236f] mb-3 group-hover:text-[#fea619] transition-colors">LuxeCommerce App</h3>
+                <p class="font-sans text-sm text-slate-500 leading-relaxed mb-8 flex-grow">
+                  A premium shopping experience featuring interactive product previews, smooth gesture navigation, and secure checkout integration.
+                </p>
+                <div class="pt-6 border-t border-slate-100 mt-auto">
+                  <button class="view-case-study-btn inline-flex items-center gap-1 text-[#00236f] font-sans text-sm font-semibold hover:underline decoration-[#fea619]/50 decoration-2 underline-offset-4" data-project="luxecommerce">
+                    View Case Study
+                    <svg class="w-3.5 h-3.5 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: CloudPulse -->
+            <div class="group bg-[#f8f9ff]/80 rounded-3xl overflow-hidden border border-slate-200/80 transition-all duration-300 flex flex-col h-full hover:border-[#fea619] hover:bg-white hover:shadow-xl hover:shadow-slate-100/60">
+              <div class="aspect-video overflow-hidden relative bg-slate-100">
+                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUSCQ_MjWP62szVQEoEf8E03XKe4BtgXS9E0Y98EcIKWJOGSoslD_vIdychavUf5oyGL4NTbIqCq0DcuCS_G1ujou4Ue568j-r1aQfLVPRnHOp6-ynR_5sutRNmIF0hGp0DRlN8Q3JWVXbcgMCftCqmv6saiYEZpsjdHt2NzkJYNPMZX8tpAq8lU7DsYVdv1PAWtvz_A91IlKbuwUAAWvkfos2uVWYbMmcWF5h7zidmIA50qimv8JiHNvX_CCui82JLZ1nLi7TbeY" 
+                  alt="CloudPulse Monitor preview" referrerPolicy="no-referrer" />
+                <div class="absolute inset-0 bg-[#00236f]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                  <span class="bg-[#00236f] border border-slate-700 px-4 py-2 rounded-full text-xs font-semibold text-white shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-all">
+                    Explore Case Study
+                    <svg class="w-3 h-3 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="p-8 flex flex-col flex-grow text-left">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">Docker</span>
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">AWS</span>
+                  <span class="bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-full text-[10px] font-mono tracking-wide">Nginx</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-[#00236f] mb-3 group-hover:text-[#fea619] transition-colors">CloudPulse Monitor</h3>
+                <p class="font-sans text-sm text-slate-500 leading-relaxed mb-8 flex-grow">
+                  Automated container infrastructure monitoring tool built for high-density cluster tracking, predictive scaling, and anomalous event detection.
+                </p>
+                <div class="pt-6 border-t border-slate-100 mt-auto">
+                  <button class="view-case-study-btn inline-flex items-center gap-1 text-[#00236f] font-sans text-sm font-semibold hover:underline decoration-[#fea619]/50 decoration-2 underline-offset-4" data-project="cloudpulse">
+                    View Case Study
+                    <svg class="w-3.5 h-3.5 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="py-24 md:py-32 bg-[#0b1c30] text-white relative overflow-hidden flex items-center select-none">
+        <div class="absolute right-1/4 bottom-0 w-96 h-96 bg-[#fea619]/5 rounded-full blur-[140px] pointer-events-none select-none"></div>
+
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          <!-- Column 1: Contact Details Copy -->
+          <div class="lg:col-span-6 text-center lg:text-left space-y-6">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fea619]/15 border border-[#fea619]/20 text-[#fea619] text-xs font-mono font-semibold tracking-wide">
+              <svg class="w-3.5 h-3.5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>LET'S START A DISCOVERY CALL</span>
+            </span>
+
+            <h2 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              Let's build something <span class="text-[#fea619] underline decoration-[#fea619]/30 decoration-2 underline-offset-8">extraordinary.</span>
+            </h2>
+
+            <p class="font-sans text-[16px] text-slate-300 leading-relaxed max-w-md mx-auto lg:mx-0">
+              Currently available for select freelance opportunities, architectural consultations, and full-time senior engineering roles. Let's hop on a call to talk about your vision.
+            </p>
+
+            <div class="space-y-4 pt-6 max-w-xs mx-auto lg:mx-0">
+              <div class="flex items-center gap-4 text-left p-4 bg-white/5 border border-white/10 rounded-2xl hover:border-[#fea619]/30 transition-colors">
+                <div class="w-12 h-12 bg-[#fea619]/20 rounded-full flex items-center justify-center text-[#fea619]">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-mono text-[10px] text-slate-400 uppercase tracking-wider">EMAIL ME DIRECTLY</p>
+                  <p class="font-sans text-[15px] font-semibold text-white">hello@omar-gaafow.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 text-left p-4 bg-white/5 border border-white/10 rounded-2xl hover:border-[#fea619]/30 transition-colors">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-300">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-mono text-[10px] text-slate-400 uppercase tracking-wider">LOCATION REPRESENTED</p>
+                  <p class="font-sans text-[15px] font-semibold text-white">Remote / London, UK</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Contact Form Card (Fidelity White Card Accent) -->
+          <div id="contact-form-component" class="lg:col-span-6 relative">
+            <div class="absolute -top-12 left-6 z-20">
+              <img src="/src/assets/images/omar.jpeg" alt="omar-gaafow portrait" class="w-24 h-24 rounded-full border-4 border-white object-cover shadow-lg" />
+            </div>
+            <div id="form-container" class="bg-white border border-slate-100 p-8 md:p-12 rounded-[2.2rem] shadow-2xl relative text-[#0b1c30] transition-all duration-300">
+              
+              <!-- Active Inputs State -->
+              <form id="portfolio-contact-form" class="space-y-6 block">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div class="space-y-2 text-left">
+                    <label class="text-xs font-mono text-slate-500 font-bold tracking-wide" for="name">FULL NAME</label>
+                    <input class="w-full bg-slate-50 border border-slate-200 focus:border-[#fea619] text-[#0b1c30] rounded-xl p-4 text-[14px] outline-none transition-colors placeholder-slate-400" id="name" placeholder="John Doe" type="text" required />
+                  </div>
+                  <div class="space-y-2 text-left">
+                    <label class="text-xs font-mono text-slate-500 font-bold tracking-wide" for="email">EMAIL ADDRESS</label>
+                    <input class="w-full bg-slate-50 border border-slate-200 focus:border-[#fea619] text-[#0b1c30] rounded-xl p-4 text-[14px] outline-none transition-colors placeholder-slate-400" id="email" placeholder="john@example.com" type="email" required />
+                  </div>
+                </div>
+
+                <div class="space-y-2 text-left">
+                  <label class="text-xs font-mono text-slate-500 font-bold tracking-wide" for="message">YOUR MESSAGE</label>
+                  <textarea class="w-full bg-slate-50 border border-slate-200 focus:border-[#fea619] text-[#0b1c30] rounded-xl p-4 text-[14px] outline-none h-32 resize-none transition-colors placeholder-slate-400" id="message" placeholder="Tell me about your project stack or timeline..." required></textarea>
+                </div>
+
+                <button id="submit-contact-form-btn" type="submit" class="w-full bg-[#fea619] hover:bg-[#e09000] text-[#00236f] font-sans font-extrabold text-[15px] py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-[#fea619]/20 select-none">
+                  <span>Send Message</span>
+                  <svg class="w-4 h-4 text-[#00236f] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+
+              <!-- Success State Container (Hidden Initially) -->
+              <div id="form-success-container" class="hidden text-center space-y-6">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto border border-green-200">
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                
+                <h3 class="font-display text-2xl font-bold text-[#00236f]">
+                  Thank you, <span id="success-user-name">Client</span>!
+                </h3>
+                
+                <p class="font-sans text-sm text-slate-500 leading-relaxed max-w-sm mx-auto">
+                  Your message has been safely recorded. I will review your stack details and get back to you within 2-4 hours.
+                </p>
+
+                <div class="pt-6">
+                  <button id="reset-form-btn" class="text-xs font-mono font-semibold text-[#00236f] hover:underline px-4 py-2 bg-[#fea619]/10 rounded-full border border-[#fea619]/20 hover:bg-[#fea619]/25 duration-200">
+                    ← Send another inquiry
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer id="app-footer" class="bg-white border-t border-slate-100 text-slate-700 py-16 relative z-10 text-center">
+      <div class="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        
+        <div class="text-left">
+          <a href="#hero" class="font-display text-xl font-extrabold tracking-tight text-[#00236f]">
+            omar-gaafow
+          </a>
+          <p class="text-slate-500 text-xs font-sans mt-1">
+            &copy; 2026 omar-gaafow. All rights reserved. Craftsmanship and precision on every pixel.
+          </p>
+        </div>
+
+        <!-- Social links -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+          <a id="footer-github-link" href="#github" class="hover:text-[#00236f] flex items-center gap-2 transition-colors duration-200 font-semibold text-slate-600 hover:scale-[1.02]">
+            <svg class="w-4 h-4 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+          
+          <a id="footer-linkedin-link" href="#linkedin" class="hover:text-[#00236f] flex items-center gap-2 transition-colors duration-200 font-semibold text-slate-600 hover:scale-[1.02]">
+            <svg class="w-4 h-4 text-[#00236f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          
+          <a id="footer-twitter-link" href="#twitter" class="hover:text-[#00236f] flex items-center gap-2 transition-colors duration-200 font-semibold text-slate-600 hover:scale-[1.02]">
+            <svg class="w-4 h-4 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+            <span>Twitter</span>
+          </a>
+        </div>
+
+        <div>
+          <button id="scroll-to-top-btn" class="p-3 bg-slate-50 hover:bg-slate-100 text-slate-500 hover:text-[#00236f] rounded-full transition-all border border-slate-200 duration-200 group" aria-label="Scroll back to top">
+            <svg class="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- CASE STUDY DIALOG / MODAL (Dynamic Popup Engine) -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md overflow-y-auto hidden">
+      <div class="relative w-full max-w-4xl bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl my-8 text-left transition-all duration-300 transform scale-95 opacity-0" id="modal-card">
+        
+        <!-- Header block with background banner image -->
+        <div class="relative h-48 sm:h-64 bg-slate-100 overflow-hidden">
+          <img id="modal-project-image" class="w-full h-full object-cover opacity-35" src="" alt="" referrerPolicy="no-referrer" />
+          <div class="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+          
+          <button id="close-modal-btn" class="absolute top-6 right-6 p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full transition-colors border border-slate-200 z-10" aria-label="Close dialog">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          
+          <div class="absolute bottom-6 left-8 sm:left-12 pr-6">
+            <div id="modal-project-tags" class="flex flex-wrap gap-2 mb-2">
+              <!-- Dynamically Appended Tag Elements -->
+            </div>
+            <h3 id="modal-project-title" class="font-display text-2xl sm:text-3xl font-extrabold text-[#00236f] leading-tight select-all">
+              Project Title
+            </h3>
+          </div>
+        </div>
+
+        <div class="p-8 sm:p-12 grid grid-cols-1 md:grid-cols-12 gap-8 bg-white">
+          <div class="md:col-span-8 space-y-8">
+            <!-- Problem & Goal -->
+            <div>
+              <h4 class="text-[#00236f] font-display text-base font-bold flex items-center gap-2 mb-3">
+                <svg class="w-5 h-5 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                The Engineering Challenge
+              </h4>
+              <p id="modal-project-challenge" class="text-slate-600 text-sm leading-relaxed">
+                Detail statement of the complexity.
+              </p>
+            </div>
+
+            <!-- Approach taken -->
+            <div>
+              <h4 class="text-[#00236f] font-display text-base font-bold flex items-center gap-2 mb-3">
+                <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+                The Core Implementation
+              </h4>
+              <p id="modal-project-action" class="text-slate-600 text-sm leading-relaxed">
+                Step-by-step resolution of engineering stack.
+              </p>
+            </div>
+
+            <!-- Stack & System design parameters -->
+            <div>
+              <h4 class="text-[#00236f] font-display text-base font-bold flex items-center gap-2 mb-3">
+                <svg class="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                System Architecture Highlights
+              </h4>
+              <div id="modal-project-architecture" class="flex flex-wrap gap-2">
+                <!-- Dynamically Appended Architecture Elements -->
+              </div>
+            </div>
+          </div>
+
+          <!-- System Metrics Sidebar -->
+          <div class="md:col-span-4 bg-[#f8f9ff] p-6 rounded-2xl border border-slate-200 h-fit space-y-6">
+            <h4 class="text-[#00236f] font-display text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#fea619] animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Impact Metrics
+            </h4>
+            <div id="modal-project-metrics" class="space-y-4">
+              <!-- Dynamically populated metrics -->
+            </div>
+            
+            <div class="pt-4 border-t border-slate-200">
+              <button id="modal-visit-app-btn" class="w-full bg-[#00236f] hover:bg-[#00174e] text-white font-sans font-bold text-xs py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#fea619]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Visit Production App
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scripts compilation pipeline -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

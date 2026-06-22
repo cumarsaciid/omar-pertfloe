@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00236f;
+  --color-surface: #ffffff;
+  --color-surface-container: #f8f9ff;
+  --color-surface-card: #ffffff;
+  --color-accent: #fea619;
+  --color-accent-hover: #e09000;
+  --color-text-on-accent: #ffffff;
+  --color-text-primary: #0b1c30;
+  --color-text-muted: #576071;
+  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Hanken Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+  }
+}
